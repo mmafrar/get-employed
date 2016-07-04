@@ -1,0 +1,157 @@
+body {
+    background-image: url("../img/back.jpg");
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+p { text-align: center; }
+
+/*CSS for tables in left */
+table {
+    float:left;
+    width:300px;
+    margin:0px 0px 0px 200px;
+    padding:5px;
+    border-style: outset;
+    border-width: 5px;
+    border-color: #008CBA;
+    border-radius: 5px;
+}
+
+tr:hover { background-color: #f5f5f5; }
+
+#search {
+    float:right;
+    width:400px;
+    margin-right:25px;
+    padding:5px;
+    text-align: center; 
+    border-width: 5px;
+    border-color: #008CBA;
+    border-radius: 5px;
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+}
+
+#login {
+    float:right;
+    width:300px;
+    margin:auto;
+    padding:5px;
+    border-style: outset;
+    border-width: 5px;
+    border-color: #008CBA;
+    border-radius: 5px;
+    text-align:center;        
+}
+
+.slides {
+    float: left;
+    width: 40%;
+}
+
+divsearch {
+    float:left;
+    width:800px;
+    margin:5px 0px 0px 325px;
+    padding:5px;
+    border-style: outset;
+    border-width: 5px;
+    border-color: #008CBA;
+    border-radius: 5px;
+    text-align:center;
+}
+
+.input[type=text] {
+    width: 200px;
+}
+
+.button {
+    background-color: #008CBA; /* blue */
+    border: 2px solid #008CBA;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+.button:hover {
+    background-color: #ffffff; /* white */
+    color: #008CBA;
+}
+
+/*CSS for top nav */
+ul.topnav {
+    list-style-type: none;
+    margin-top: 5px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #008CBA;
+}
+
+ul.topnav li {float: right;}
+
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+ul.topnav li a:hover {
+    background-color:#ffffff ;
+    color:#008CBA;
+}
+
+/*CSS for left nav */
+ul.left{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #008CBA;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+/*CSS for list items with links (a hrefs) */
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #ffffff;
+    color: #008CBA;
+}
+
+li a:hover:not(.active) {
+    background-color: #ffffff;
+    color: #008CBA;
+}
+
+/*CSS for links (a hrefs) */
+a:link, a:visited {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 12px;
+}
+
+a:hover, a:active {
+    background-color: #ffffff; /* white */
+    color: #008CBA;
+}
