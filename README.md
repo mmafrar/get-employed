@@ -6,4 +6,4 @@ Contributors
 Mohamed Afrar - mmafrar@gmail.com
 Madhuka De Silva - desilvamadhuka@gmail.com
 Samadhi Gunarathne - samadhigunarathne1993@gmail.com
-Gevindu Dayal
+Gevindu Dayal - gevindu94@gmail.com
