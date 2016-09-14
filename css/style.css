@@ -2,6 +2,8 @@ body {
     background-image: url("../img/back.jpg");
     border-collapse: collapse;
     border-spacing: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 p { text-align: center; }

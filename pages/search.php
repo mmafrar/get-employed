@@ -142,8 +142,28 @@
 
 <!--start of php for keyword wise search-->
     <?php
-    	if(isset($_GET['submit'])) {
-    		$keywords = $_GET['keywords'];
+    	if(isset($_GET['submit'])){
+			$keywords = $_GET['keywords'];
+
+			$sql = "SELECT keyword, count FROM report WHERE keyword='$keywords'";
+			$result = $connection->query($sql);
+
+		    if($result->num_rows > 0) {
+		    	$row = $result->fetch_row();
+	    		foreach($row as $key => $value) {
+	    			if($key == 1) {
+	    				$count = $value;
+	    			}
+	    		}
+
+				$count = $count + 1;
+				$sql = "UPDATE report SET count = '$count' WHERE keyword = '$keywords'";
+				$connection->query($sql);
+		    } else {
+				$sql = "INSERT INTO report(keyword,count) VALUES ('$keywords', 1)";
+				$connection->query($sql);
+		    }
+
     		$keyword_tokens = explode(' ', $keywords);
 
     		foreach($keyword_tokens as $keyword) {

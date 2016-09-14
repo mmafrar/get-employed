@@ -53,36 +53,42 @@
 				}
 
 				if(isset($_POST["submit"])) {
-	            
-	                $email = $_POST["email"];
-	                $password = md5($_POST["password"]);
 
-	                // Querying the Employer table
-					$sql = "SELECT email, password FROM employer WHERE email='$email' AND password='$password'";
-	                $result = $connection->query($sql);
+					if($_POST["email"] == "admin" && $_POST["password"] == "admin@123") {
+						header("Location:pages/admin.php");
+					} else {
+		            
+		                $email = $_POST["email"];
+		                $password = md5($_POST["password"]);
 
-	                if($result->num_rows > 0) {
-	                    $row = $result->fetch_assoc();
-	                    $_SESSION["email"]=$email;
-	                    $message = "<font color=green> <br/> <b> Login Success </b> </font>";
-	                    header("Location:pages/dashboard.php");
-	                } else {
+		                // Querying the Employer table
+						$sql = "SELECT email, password FROM employer WHERE email='$email' AND password='$password'";
+		                $result = $connection->query($sql);
 
-	                	// Querying the Jobseeker table
-						$sql = "SELECT email, password FROM jobseeker WHERE email='$email' AND password='$password'";
-						$result = $connection->query($sql);
+		                if($result->num_rows > 0) {
+		                    $row = $result->fetch_assoc();
+		                    $_SESSION["email"]=$email;
+		                    $message = "<font color=green> <br/> <b> Login Success </b> </font>";
+		                    header("Location:pages/dashboard.php");
+		                } else {
 
-	                	if($result->num_rows > 0) {
-	                    	$row = $result->fetch_assoc();
-	                    	$_SESSION["email"]=$email;
-	                    	$message = "<font color=green> <br/> <b> Login Success </b> </font>";
-	                    	header('Location:pages/search.php');
-	                    } else {
-	                    	$message = "<font color=red> <br/> <b> Wrong username or password.<br>Please try again.</b> </font>";
-	                		$message = $message . "<p>If you are a new user<br/><a href='role.php'>Sign Up</a></p>";
-	                    }
-	                }
-	            }
+		                	// Querying the Jobseeker table
+							$sql = "SELECT email, password FROM jobseeker WHERE email='$email' AND password='$password'";
+							$result = $connection->query($sql);
+
+		                	if($result->num_rows > 0) {
+		                    	$row = $result->fetch_assoc();
+		                    	$_SESSION["email"]=$email;
+		                    	$message = "<font color=green> <br/> <b> Login Success </b> </font>";
+		                    	header('Location:pages/search.php');
+		                    } else {
+		                    	$message = "<font color=red> <br/> <b> Wrong username or password.<br>Please try again.</b> </font>";
+		                		$message = $message . "<p>If you are a new user<br/><a href='pages/role.php'>Sign Up</a></p>";
+		                    }
+		                }
+		            }
+		        }
+
 	            echo "<br/>" . $message;
 
 	            // Close connection
